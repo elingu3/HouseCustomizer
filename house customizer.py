@@ -98,7 +98,7 @@ left_bush = Entity(
     parent=bushes_group,
     model='quad',
     texture=bushes[0],
-    scale=2,
+    scale=(4,2),
     position=(-2, -3, -1.5)
 )
 
@@ -106,7 +106,7 @@ right_bush = Entity(
     parent=bushes_group,
     model='quad',
     texture=bushes[0],
-    scale=2,
+    scale=(4,2),
     position=(2, -3, -1.5)
 )
 
