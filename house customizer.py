@@ -1,7 +1,8 @@
 from ursina import *
 
-app = Ursina(size=(907,786))
+app = Ursina(size=(589.55,510.9))
 font_path = 'resources/fonts/Minecraft.ttf'
+music = Audio('resources/bonsai-chill-lofi-365943.mp3', loop=True, autoplay=True)
 
 # --- Background ---
 background = Entity(
@@ -98,16 +99,16 @@ left_bush = Entity(
     parent=bushes_group,
     model='quad',
     texture=bushes[0],
-    scale=(4,2),
-    position=(-2, -3, -1.5)
+    scale=(3,1.5),
+    position=(-2, -3, -4)
 )
 
 right_bush = Entity(
     parent=bushes_group,
     model='quad',
     texture=bushes[0],
-    scale=(4,2),
-    position=(2, -3, -1.5)
+    scale=(3,1.5),
+    position=(2, -3, -4)
 )
 
 roof_entity.texture_scale = (1, 1)  # Ensures full texture is drawn
@@ -154,8 +155,8 @@ def cycle_part(direction):
         entity.texture = textures[index]
 
 # --- Arrow buttons ---
-left_arrow = Button(model='quad', texture="resources/left_arrow.png", color=color.white, scale=(0.08,0.08), position=(-0.3, -0.05), z=5, on_click=lambda: cycle_part(-1))
-right_arrow = Button(model='quad', texture="resources/right_arrow.png", color=color.white, scale=(0.08,0.08), position=(0.3, -0.05), z=5, on_click=lambda: cycle_part(1))
+left_arrow = Button(model='quad', texture="resources/left_arrow.png", color=color.white, scale=(0.08,0.08), position=(-0.35, -0.05), z=5, on_click=lambda: cycle_part(-1))
+right_arrow = Button(model='quad', texture="resources/right_arrow.png", color=color.white, scale=(0.08,0.08), position=(0.35, -0.05), z=5, on_click=lambda: cycle_part(1))
 
 # --- Window resize update ---
 def update_window_layout():
