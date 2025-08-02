@@ -1,9 +1,13 @@
 from ursina import *
 
 app = Ursina(size=(589.55,510.9))
-font_path = 'resources/fonts/Minecraft.ttf'
 music = Audio('resources/bonsai-chill-lofi-365943.mp3', loop=True, autoplay=True)
 
+# --- Window resize update ---
+def update_window_layout():
+    background.scale = (window.aspect_ratio * 15, 15)
+
+window.on_resize = update_window_layout
 # --- Background ---
 background = Entity(
     model='quad',
@@ -32,7 +36,7 @@ currentIndexes = {
     "bushes": 0
 }
 
-# --- House parts lists ---
+# --- parts lists ---
 houses = [
     'resources/house/white.png',
     'resources/house/blue.png',
@@ -76,6 +80,7 @@ roof_entity = Entity(model='quad', texture=roofs[0], scale=(8,6.5), position=(0.
 door_entity = Entity(model='quad', texture=doors[0], scale=(1.3,1.6), position=(0,-1.8,-3))
 window_group = Entity()
 bushes_group = Entity()
+
 # Left window
 
 left_window = Entity(
@@ -91,7 +96,7 @@ right_window = Entity(
     parent=window_group,
     model='quad',
     texture=windows[0],
-    scale=(1, 1.5),  # flipped horizontally
+    scale=(1, 1.5), 
     position=(2, -1, -1.5)
 )
 
@@ -157,11 +162,5 @@ def cycle_part(direction):
 # --- Arrow buttons ---
 left_arrow = Button(model='quad', texture="resources/left_arrow.png", color=color.white, scale=(0.08,0.08), position=(-0.35, -0.05), z=5, on_click=lambda: cycle_part(-1))
 right_arrow = Button(model='quad', texture="resources/right_arrow.png", color=color.white, scale=(0.08,0.08), position=(0.35, -0.05), z=5, on_click=lambda: cycle_part(1))
-
-# --- Window resize update ---
-def update_window_layout():
-    background.scale = (window.aspect_ratio * 15, 15)
-
-window.on_resize = update_window_layout
 
 app.run()
