@@ -1,7 +1,7 @@
 # 🏠 House Customizer (Ursina Engine)
 
 A simple **house customization game** built in Python using the **Ursina Engine**.  
-Players can choose different **house bodies, roofs, and doors** by clicking category buttons and cycling through available textures.
+Players can choose different **house bodies, roofs, doors, windows, and more** by clicking category buttons and cycling through available textures.
 
 ---
 
@@ -13,8 +13,8 @@ Players can choose different **house bodies, roofs, and doors** by clicking cate
   - 8 house body colors
   - 5 roof colors
   - 3 door designs
-  - 3 window designs
-  - 3 bush designs
+  - 4 window designs
+  - 4 bush designs
 - **Clean Z-Layering**
   - Background, house parts, and UI buttons render in the correct order
 - **Simple Extensibility**
