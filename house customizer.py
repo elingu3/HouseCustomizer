@@ -65,13 +65,15 @@ doors = [
 windows = [
     'resources/windows/oval.png',
     'resources/windows/circle.png',
-    'resources/windows/square.png'
+    'resources/windows/square.png',
+    'resources/windows/rectangle.png'
 ]
 
 bushes = [
     'resources/bushes/color.png',
     'resources/bushes/rose.png',
-    'resources/bushes/sunflower.png'
+    'resources/bushes/sunflower.png',
+    'resources/bushes/pink and blue.png'
 ]
 
 # --- Entities for displaying parts ---
@@ -82,7 +84,6 @@ window_group = Entity()
 bushes_group = Entity()
 
 # Left window
-
 left_window = Entity(
     parent=window_group,
     model='quad',
@@ -100,6 +101,7 @@ right_window = Entity(
     position=(2, -1, -1.5)
 )
 
+#Left bush
 left_bush = Entity(
     parent=bushes_group,
     model='quad',
@@ -108,6 +110,7 @@ left_bush = Entity(
     position=(-2, -3, -4)
 )
 
+#Right bush
 right_bush = Entity(
     parent=bushes_group,
     model='quad',
@@ -153,7 +156,7 @@ def cycle_part(direction):
 
     # Update texture
     if part == "windows" or part == "bushes":
-        # Update both left and right windows
+        # Update both left and right parts
         for child in entity.children:
             child.texture = textures[index]
     else:
